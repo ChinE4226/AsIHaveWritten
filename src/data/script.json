@@ -1,0 +1,40 @@
+{
+  "start": "n1",
+  "nodes": {
+    "n1": {
+      "speaker": "Welt",
+      "title": "As I've written,",
+      "text": "…the most reliable records are the ones you can verify twice.",
+      "portrait": "portrait_welt.png",
+      "bg": "bg_default.jpg",
+      "choices": [
+        { "label": "Ask what he means", "to": "n2" },
+        { "label": "Stay silent", "to": "n3" }
+      ]
+    },
+    "n2": {
+      "speaker": "Welt",
+      "title": "As I've written,",
+      "text": "You can borrow someone else's conclusion—but never their certainty. Observe, compare, then decide.",
+      "choices": [
+        { "label": "Continue", "to": "n4" }
+      ]
+    },
+    "n3": {
+      "speaker": "Welt",
+      "title": "As I've written,",
+      "text": "Silence can be a form of agreement… or a request for more detail.",
+      "choices": [
+        { "label": "Continue", "to": "n4" }
+      ]
+    },
+    "n4": {
+      "speaker": "System",
+      "title": "Log Updated",
+      "text": "This is a Vue-based interactive dialogue shell. Replace characters and assets with your own.",
+      "choices": [
+        { "label": "Replay from start", "to": "n1" }
+      ]
+    }
+  }
+}
