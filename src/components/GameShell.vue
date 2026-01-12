@@ -83,9 +83,8 @@ const SAVE_KEY = "hsr_like_dialogue_saves_v1";
 
 function safeAssetUrl(name) {
   try {
-    // If you provide assets in src/assets, Vue CLI will bundle them.
-    return new URL(`../assets/${name}`, import.meta.url).href;
-  } catch {
+    return require(`@/assets/${name}`);
+  } catch (e) {
     return "";
   }
 }
@@ -243,7 +242,9 @@ export default {
         const parsed = JSON.parse(raw);
         if (parsed?.state?.nodeId && script.nodes[parsed.state.nodeId]) this.state = { ...this.state, ...parsed.state };
         if (Array.isArray(parsed?.history)) this.history = parsed.history.slice(-200);
-      } catch {}
+      } catch (e) {
+        // ignore
+      }
     },
     loadSlots() {
       try {
