@@ -1,0 +1,72 @@
+:root{
+  --bg0:#050814;
+  --bg1:#07112a;
+  --glass: rgba(10, 20, 40, 0.55);
+  --glass2: rgba(15, 35, 70, 0.35);
+  --line: rgba(220, 235, 255, 0.18);
+  --line2: rgba(220, 235, 255, 0.08);
+  --text: rgba(245, 250, 255, 0.92);
+  --muted: rgba(245, 250, 255, 0.65);
+  --accent: rgba(150, 210, 255, 0.85);
+  --danger: rgba(255, 140, 140, 0.9);
+  --shadow: rgba(0,0,0,0.45);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--text); }
+
+body{
+  overflow:hidden;
+  background:
+    radial-gradient(1200px 600px at 50% 35%, rgba(70,120,255,0.18), transparent 55%),
+    radial-gradient(900px 500px at 75% 55%, rgba(120,80,255,0.14), transparent 60%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+
+/* subtle “scanline” vibe */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:0.18;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.05) 1px,
+    transparent 2px,
+    transparent 5px
+  );
+  mix-blend-mode: overlay;
+}
+
+/* tiny particles (cheap + stable) */
+body::after{
+  content:"";
+  position:fixed;
+  inset:-40px;
+  pointer-events:none;
+  opacity:0.25;
+  background-image:
+    radial-gradient(rgba(180,220,255,0.25) 1px, transparent 1px),
+    radial-gradient(rgba(120,160,255,0.18) 1px, transparent 1px);
+  background-size: 90px 90px, 140px 140px;
+  background-position: 0 0, 30px 60px;
+  filter: blur(0.2px);
+}
+
+a{ color:inherit; }
+
+button{
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.kbd-hint{
+  font-size:12px;
+  color: var(--muted);
+  opacity:0.85;
+}

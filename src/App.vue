@@ -1,8 +1,20 @@
 <template>
-  <GameShell />
+  <main class="stage">
+    <AsIveWritten />
+  </main>
 </template>
 
-<script>
-import GameShell from "./components/GameShell.vue";
-export default { components: { GameShell } };
+<script setup>
+import AsIveWritten from "./components/AsIveWritten.vue";
 </script>
+
+<style scoped>
+.stage{
+  height:100vh;
+  width:100vw;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 24px;
+}
+</style>
